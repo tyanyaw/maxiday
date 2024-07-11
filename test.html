@@ -1,0 +1,20 @@
+<script>
+	console.log("=== START ====");
+	var requestOptions = {
+	  method: 'GET',
+	  redirect: 'follow'
+	};
+
+	fetch("https://app.whacenter.com/api/statusDevice?device_id=d186616983f2e3ff815373c20091e885", requestOptions)
+	  .then(response => {
+	    if (!response.ok) {
+	      throw new Error('Network response was not ok ' + response.statusText);
+	    }
+	    return response.json();
+	  })
+	  .then(data => console.log(data))
+	  .catch(error => console.log('error', error));
+
+	console.log("CEK WHACENTER");
+
+</script>
